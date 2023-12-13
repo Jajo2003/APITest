@@ -32,7 +32,7 @@ class Program
 }
 
 [ApiController]
-public class MyController : ControllerBase
+public class UserControler : ControllerBase
 {
 	[HttpGet("/api/getCorrect")]
 	
