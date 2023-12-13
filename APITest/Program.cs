@@ -53,6 +53,8 @@ public class MyController : ControllerBase
 		}
 		else if (data.CheckExists(ID))
 		{
+			status = 400;
+			Response.StatusCode = status;
 			return BadRequest(new { Message = "THIS ID ALREADY EXISTS", StatusCode = "already Exists" });
 		}
 		else
