@@ -47,6 +47,7 @@ public class MyController : ControllerBase
 		if (!isValid || !int.TryParse(a, out ID))
 		{
 			status = 400;
+			Response.StatusCode = status;
 			return BadRequest(new {Message = "YOUR ID MUST CONTAIN ONLY DIGITS",StatusCode = "Can't ADD ID with Characters"});
 
 		}
@@ -57,6 +58,7 @@ public class MyController : ControllerBase
 		else
 		{
 			status = 200;
+			Response.StatusCode = status;
 			return Ok(new { Message = $"Your ID({ID}) ADDED SUCCESSFULLY",StatusCode = $"Success"});
 		}
 		
